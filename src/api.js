@@ -1,4 +1,4 @@
-import { Admin } from "./schemas";
+import { Admin } from "./schemas.js";
 import express from "express";
 
 const apiRouter = express.Router();
@@ -7,9 +7,11 @@ apiRouter.use(express.json());
 
 apiRouter.post("/submitCredentials", (req, res) => {
   const body = req.body;
-  if (!body.userId) {
-    return res.json({ code: 400, message: "No user Id" });
-  }
+  console.log(body);
+
+  // if (!body.userId) {
+  //   return res.json({ code: 400, message: "No user Id" });
+  // }
 });
 
 apiRouter.post("/admin/login", (req, res) => {
